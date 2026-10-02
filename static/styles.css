@@ -1,0 +1,366 @@
+/* ==========================================================================
+   MYLIFE (APPLE FITNESS+ DESIGN SYSTEM)
+   Spaced Aesthetics, Big Bold Elements, Fluid Typography & True Black Canvas
+   ========================================================================== */
+
+:root {
+  --bg-black: #000000;
+  --bg-card: rgba(24, 24, 27, 0.75);
+  --bg-card-subtle: rgba(255, 255, 255, 0.04);
+  
+  /* Apple Activity Rings */
+  --ring-move: #ff2d55;        /* Flame Red / Nutrition & Fasting */
+  --ring-exercise: #a1ff00;    /* Volt Green / 2-Set Workout */
+  --ring-steps: #00f0ff;       /* Electric Cyan / FatMax Steps */
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(255, 255, 255, 0.22);
+  
+  --radius-card: 30px;
+  --radius-pill: 9999px;
+  --radius-button: 22px;
+  
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: #ffffff;
+  font-family: var(--font-apple);
+  letter-spacing: -0.022em;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent iOS Safari Viewport Auto-Zoom on Input Focus (Requires >= 16px font-size) */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Remove ugly browser number spinner arrows */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Hero Numbers (Giant typography without input overflow) */
+.text-num-hero {
+  font-size: 2.5rem !important; /* 40px */
+  line-height: 2.75rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Hero Workout Display Heading (Apple Fitness+ Aesthetic) */
+.hero-workout-title {
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .hero-workout-title {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+/* Hide scrollbars for smooth horizontal swipe carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe Area Insets for iOS Home Indicator and Notches */
+.safe-pb {
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+.safe-pt {
+  padding-top: max(16px, env(safe-area-inset-top, 0px));
+}
+
+/* Apple Spaced Glass Card */
+.apple-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apple-card:hover {
+  border-color: var(--border-focus);
+}
+
+.apple-card:active {
+  transform: scale(0.995);
+}
+
+/* Concentric Rings Circle Stroke */
+.ring-circle {
+  transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-linecap: round;
+}
+
+/* Large Tactile Sliders */
+/* Sleek Tactile Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #27272a;
+  border-radius: var(--radius-pill);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 255, 255, 0.3);
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 255, 255, 0.3);
+  cursor: grab;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.18);
+  cursor: grabbing;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+  transform: scale(1.18);
+  cursor: grabbing;
+}
+
+/* Large Interactive Anatomy Health Chips */
+.health-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: #18181b;
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.health-chip:active {
+  transform: scale(0.93);
+}
+
+.health-chip.active {
+  background: rgba(255, 45, 85, 0.2);
+  border-color: #ff2d55;
+  color: #ff375f;
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.4);
+}
+
+/* Selectable Option Pill */
+.option-pill {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #18181b;
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.option-pill.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Fullscreen Studio Player */
+#studioPlayerView {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+#studioPlayerView.hidden-player {
+  transform: translateY(100%);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Audio Visualizer Bars */
+@keyframes soundwave {
+  0%, 100% { height: 6px; }
+  50% { height: 24px; }
+}
+
+.wave-bar:nth-child(1) { animation: soundwave 1.1s infinite ease-in-out; }
+.wave-bar:nth-child(2) { animation: soundwave 0.8s infinite 0.2s ease-in-out; }
+.wave-bar:nth-child(3) { animation: soundwave 1.3s infinite 0.4s ease-in-out; }
+.wave-bar:nth-child(4) { animation: soundwave 0.9s infinite 0.1s ease-in-out; }
+
+/* Fullscreen Meal Detail Page (Apple Sheet Style) */
+#mealDetailPage {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+#mealDetailPage.hidden-meal-page {
+  transform: translateY(100%);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Macro Progress Bars */
+.macro-progress-bg {
+  background: rgba(255, 255, 255, 0.08);
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.macro-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Apple Segmented Control Tabs */
+.segmented-tab {
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  background: #18181b;
+  color: #71717a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.segmented-tab.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25);
+}
+
+/* Workout Set Row Card (Spacious, Uncluttered, Non-Squished) */
+.workout-set-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  padding: 18px;
+  transition: all 0.25s ease;
+}
+
+.workout-set-card.is-completed {
+  background: rgba(161, 255, 0, 0.05);
+  border-color: rgba(161, 255, 0, 0.35);
+  box-shadow: 0 0 20px rgba(161, 255, 0, 0.08);
+}
+
+/* Touch-Friendly Number Input */
+.apple-num-input {
+  background: #121214 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px !important;
+  padding: 12px 10px !important;
+  font-size: 1.15rem !important; /* 18.5px, never zooms */
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apple-num-input:focus {
+  outline: none;
+  border-color: #a1ff00 !important;
+  box-shadow: 0 0 12px rgba(161, 255, 0, 0.3) !important;
+}
+
+/* Mindful Cooldown Breathing Meditation Guide */
+@keyframes breatheGuide {
+  0% { transform: scale(0.85); opacity: 0.45; filter: blur(1px); }
+  35% { transform: scale(1.15); opacity: 1; filter: blur(0px); }
+  65% { transform: scale(1.15); opacity: 1; filter: blur(0px); }
+  100% { transform: scale(0.85); opacity: 0.45; filter: blur(1px); }
+}
+
+.breathe-circle-anim {
+  animation: breatheGuide 12s infinite ease-in-out;
+}
+
+/* SVG Chart Sparkline */
+.sparkline-path {
+  fill: none;
+  stroke: #a1ff00;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sparkline-area {
+  fill: url(#chartGradient);
+}
+
+/* Client Profile & Backend Slide-Over Drawer */
+.client-drawer-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.client-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.client-drawer-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.client-drawer-panel.active {
+  transform: translateX(0);
+}
+
+

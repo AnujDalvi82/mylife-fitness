@@ -1,0 +1,44 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Local databases & personal logs
+*.db
+*.sqlite
+*.sqlite3
+fitness.db
+daily_logs.csv
+
+# Private athlete profile (use PROFILE_SAMPLE.md for template)
+PROFILE.md
+PROFILE.local.md
+*.local.md
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment & credentials
+.env
+.env.local
+*.pem
+*.key
+
+# Mobile & Capacitor builds
+node_modules/
+android/
+ios/
+dist/
+.gradle/
+build/

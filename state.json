@@ -1,0 +1,12 @@
+{
+  "current_phase": "cut",
+  "starting_weight_kg": 82.0,
+  "current_calories": 1950,
+  "target_protein_g": 165,
+  "target_fat_g": 55,
+  "target_carbs_g": 200,
+  "target_daily_steps": 10000,
+  "cardio_sessions_per_week": 3,
+  "cardio_duration_mins": 25,
+  "active_since": "2026-10-02"
+}
